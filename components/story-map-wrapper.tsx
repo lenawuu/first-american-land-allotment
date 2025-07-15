@@ -19,7 +19,7 @@ interface StoryMapWrapperProps {
 export default function StoryMapWrapper({ storyId }: StoryMapWrapperProps) {
   // Define dashboard filters based on story ID
   const getDashboardUrl = () => {
-    let filters = new URLSearchParams()
+    const filters = new URLSearchParams()
     
     if (storyId === "dawes-act") {
       filters.append("tribe", "all")

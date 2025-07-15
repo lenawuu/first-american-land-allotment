@@ -18,6 +18,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        lightCream: "#FFFCF0",
         cream: "#FBF5DD",
         sage: "#A6CDC6",
         teal: "#16404D",
@@ -60,5 +61,6 @@ module.exports = {
       },
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate")],
 };

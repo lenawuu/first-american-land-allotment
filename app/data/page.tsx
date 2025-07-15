@@ -53,7 +53,7 @@ export default function DataPage() {
                   </div>
                   <div className="mt-2 md:mt-0">
                     <Link href="/tutorials" className="inline-flex">
-                      <Button className="bg-accent hover:bg-accent/90 text-cream group whitespace-nowrap">
+                      <Button size="lg" className="px-4 py-2 bg-teal text-white rounded-md hover:bg-teal/80 transition-colors focus:outline-none focus:ring-2 focus:ring-teal">
                         View Tutorials
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </Button>
@@ -104,7 +104,7 @@ export default function DataPage() {
                 <h3 className="text-xl font-bold text-earth mb-4">
                   Understanding the Data
                 </h3>
-                <p className="text-earth/80 mb-6">
+                <p className="text-earth mb-6">
                   The data presented in this dashboard represents historical
                   records of land allotments, treaties, and territorial changes
                   affecting First American nations from 1830 to 1930.
@@ -113,7 +113,7 @@ export default function DataPage() {
                   <h4 className="font-medium text-earth mb-3">
                     Filter Categories Explained
                   </h4>
-                  <ul className="text-earth/70 space-y-3">
+                  <ul className="text-earth space-y-3">
                     <li className="flex items-start">
                       <span className="bg-accent/10 text-accent p-1 rounded-full mr-2 mt-0.5">
                         <svg
@@ -206,7 +206,7 @@ export default function DataPage() {
                 <h3 className="text-xl font-bold text-earth mb-4">
                   Research Applications
                 </h3>
-                <p className="text-earth/80 mb-6">
+                <p className="text-earth mb-6">
                   This data can be used for various research purposes, including
                   historical analysis, legal research, genealogy, and
                   educational initiatives.
@@ -216,7 +216,7 @@ export default function DataPage() {
                     <h4 className="font-medium text-earth mb-2">
                       Citation Guidelines
                     </h4>
-                    <p className="text-earth/70 bg-white p-4 rounded-lg border border-copper/10">
+                    <p className="text-earth bg-white p-4 rounded-lg border border-copper/10">
                       When using this data in your research, please cite the
                       First American Land Allotment Project and relevant primary
                       sources.
@@ -226,7 +226,7 @@ export default function DataPage() {
                     <h4 className="font-medium text-earth mb-2">
                       Data Limitations
                     </h4>
-                    <p className="text-earth/70 bg-white p-4 rounded-lg border border-copper/10">
+                    <p className="text-earth bg-white p-4 rounded-lg border border-copper/10">
                       This data represents our best understanding based on
                       available historical records, which may be incomplete or
                       contain inaccuracies.

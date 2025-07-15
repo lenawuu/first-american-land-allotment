@@ -3,10 +3,8 @@
 import type React from "react";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import NavBar from "@/components/nav-bar";
-import Footer from "@/components/footer";
 import {
   Mail,
   Phone,
@@ -79,7 +77,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1 text-earth">Email</h3>
-                    <p className="text-earth/70">info@firstamericanland.org</p>
+                    <p className="text-earth">info@firstamericanland.org</p>
                   </div>
                 </div>
 
@@ -89,7 +87,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1 text-earth">Phone</h3>
-                    <p className="text-earth/70">(555) 123-4567</p>
+                    <p className="text-earth">(555) 123-4567</p>
                   </div>
                 </div>
 
@@ -99,7 +97,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1 text-earth">Address</h3>
-                    <p className="text-earth/70">
+                    <p className="text-earth">
                       First American Land Allotment Project
                       <br />
                       Vanderbilt University
@@ -118,19 +116,19 @@ export default function ContactPage() {
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex justify-between">
-                    <span className="text-earth/70">Monday - Friday</span>
+                    <span className="text-earth">Monday - Friday</span>
                     <span className="font-medium text-earth">
                       9:00 AM - 5:00 PM
                     </span>
                   </li>
                   <li className="flex justify-between">
-                    <span className="text-earth/70">Saturday</span>
+                    <span className="text-earth">Saturday</span>
                     <span className="font-medium text-earth">
                       10:00 AM - 2:00 PM
                     </span>
                   </li>
                   <li className="flex justify-between">
-                    <span className="text-earth/70">Sunday</span>
+                    <span className="text-earth">Sunday</span>
                     <span className="font-medium text-earth">Closed</span>
                   </li>
                 </ul>
@@ -157,7 +155,7 @@ export default function ContactPage() {
                         <input
                           type="text"
                           id="firstName"
-                          className="w-full px-4 py-2 border border-earth/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-earth bg-muted/50"
+                          className="w-full px-4 py-2 border border-earth/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-earth bg-muted/20"
                           required
                         />
                       </div>
@@ -171,7 +169,7 @@ export default function ContactPage() {
                         <input
                           type="text"
                           id="lastName"
-                          className="w-full px-4 py-2 border border-earth/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-earth bg-muted/50"
+                          className="w-full px-4 py-2 border border-earth/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-earth bg-muted/20"
                           required
                         />
                       </div>
@@ -187,7 +185,7 @@ export default function ContactPage() {
                       <input
                         type="email"
                         id="email"
-                        className="w-full px-4 py-2 border border-earth/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-earth bg-muted/50"
+                        className="w-full px-4 py-2 border border-earth/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-earth bg-muted/20"
                         required
                       />
                     </div>
@@ -202,7 +200,7 @@ export default function ContactPage() {
                       <input
                         type="text"
                         id="subject"
-                        className="w-full px-4 py-2 border border-earth/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-earth bg-muted/50"
+                        className="w-full px-4 py-2 border border-earth/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-earth bg-muted/20"
                         required
                       />
                     </div>
@@ -217,7 +215,7 @@ export default function ContactPage() {
                       <textarea
                         id="message"
                         rows={5}
-                        className="w-full px-4 py-2 border border-earth/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-earth bg-muted/50"
+                        className="w-full px-4 py-2 border border-earth/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-earth bg-muted/20"
                         required
                       ></textarea>
                     </div>
@@ -227,13 +225,13 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-earth mb-1">
                         Attachments (Optional)
                       </label>
-                      <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-earth/20 border-dashed rounded-md hover:bg-muted/50 transition-colors">
+                      <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-earth/20 border-dashed rounded-md hover:bg-muted/20 transition-colors">
                         <div className="space-y-1 text-center">
-                          <Upload className="mx-auto h-12 w-12 text-earth/40" />
-                          <div className="flex text-sm text-earth/70">
+                          <Upload className="mx-auto h-12 w-12 text-earth" />
+                          <div className="flex text-sm text-earth">
                             <label
                               htmlFor="file-upload"
-                              className="relative cursor-pointer bg-white rounded-md font-medium text-accent hover:text-accent/80"
+                              className="relative cursor-pointer bg-white rounded-md font-medium text-earth hover:text-earth/80 underline"
                             >
                               <span>Upload files</span>
                               <input
@@ -248,7 +246,7 @@ export default function ContactPage() {
                             </label>
                             <p className="pl-1">or drag and drop</p>
                           </div>
-                          <p className="text-xs text-earth/50">
+                          <p className="text-xs text-earth">
                             PDF, DOC, DOCX, JPG, JPEG, PNG up to 10MB
                           </p>
                         </div>
