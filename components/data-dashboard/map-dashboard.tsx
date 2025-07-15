@@ -6,7 +6,7 @@ import "leaflet/dist/leaflet.css";
 
 export default function MapDashboard() {
   // Mock GeoJSON data
-  const geoJSONdata = {
+  const geoJSONdata: GeoJSON.FeatureCollection = {
     type: "FeatureCollection",
     features: [
       {
@@ -85,7 +85,7 @@ export default function MapDashboard() {
   const [timeRangeEnd, setTimeRangeEnd] = useState(1930);
   
   // Displayed data state (separate from filter selections)
-  const [filteredData, setFilteredData] = useState({
+  const [filteredData, setFilteredData] = useState<GeoJSON.FeatureCollection>({
     type: "FeatureCollection",
     features: geoJSONdata.features
   });
@@ -104,7 +104,7 @@ export default function MapDashboard() {
     console.log(`Applying filters: Tribe=${selectedTribe}, LandType=${selectedLandType}, Years=${timeRangeStart}-${timeRangeEnd}`);
     
     // Reset any current data
-    const filtered = {
+    const filtered: GeoJSON.FeatureCollection = {
       type: "FeatureCollection",
       features: geoJSONdata.features.filter(feature => {
         const properties = feature.properties;
@@ -153,67 +153,69 @@ export default function MapDashboard() {
   return (
     <div className="bg-cream/50 rounded-lg shadow-md overflow-hidden">
       <div className="p-4 bg-white border-b">
-        <div className="flex flex-col md:flex-row gap-4 items-start md:items-center">
-          <div className="w-full md:w-1/5">
-            <label className="block text-sm font-medium text-teal mb-1">Tribe</label>
-            <select 
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal focus:border-teal"
-              value={selectedTribe}
-              onChange={(e) => setSelectedTribe(e.target.value)}
-            >
-              <option value="all">All Tribes</option>
-              {tribes.map(tribe => (
-                <option key={tribe} value={tribe}>{tribe}</option>
-              ))}
-            </select>
-          </div>
-          
-          <div className="w-full md:w-1/5">
-            <label className="block text-sm font-medium text-teal mb-1">Land Type</label>
-            <select 
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal focus:border-teal"
-              value={selectedLandType}
-              onChange={(e) => setSelectedLandType(e.target.value)}
-            >
-              <option value="all">All Land Types</option>
-              {landTypes.map(type => (
-                <option key={type} value={type}>{type}</option>
-              ))}
-            </select>
-          </div>
-          
-          <div className="w-full md:w-1/4">
-            <label className="block text-sm font-medium text-teal mb-1">
-              Time Period: {timeRangeStart} - {timeRangeEnd}
-            </label>
-            <div className="flex space-x-4 items-center">
-              <input
-                type="number"
-                min="1830"
-                max={timeRangeEnd}
-                value={timeRangeStart}
-                onChange={(e) => {
-                  const value = Math.max(1830, Math.min(timeRangeEnd, Number(e.target.value)));
-                  setTimeRangeStart(value);
-                }}
-                className="w-24 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal focus:border-teal"
-              />
-              <span>to</span>
-              <input
-                type="number"
-                min={timeRangeStart}
-                max="1930"
-                value={timeRangeEnd}
-                onChange={(e) => {
-                  const value = Math.max(timeRangeStart, Math.min(1930, Number(e.target.value)));
-                  setTimeRangeEnd(value);
-                }}
-                className="w-24 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal focus:border-teal"
-              />
+        <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+          <div className="flex grow flex-col md:flex-row gap-4 items-start md:items-center">
+            <div className="w-full md:w-1/5">
+              <label className="block text-sm font-medium text-teal mb-1">Tribe</label>
+              <select 
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal focus:border-teal"
+                value={selectedTribe}
+                onChange={(e) => setSelectedTribe(e.target.value)}
+              >
+                <option value="all">All Tribes</option>
+                {tribes.map(tribe => (
+                  <option key={tribe} value={tribe}>{tribe}</option>
+                ))}
+              </select>
+            </div>
+            
+            <div className="w-full md:w-1/5">
+              <label className="block text-sm font-medium text-teal mb-1">Land Type</label>
+              <select 
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal focus:border-teal"
+                value={selectedLandType}
+                onChange={(e) => setSelectedLandType(e.target.value)}
+              >
+                <option value="all">All Land Types</option>
+                {landTypes.map(type => (
+                  <option key={type} value={type}>{type}</option>
+                ))}
+              </select>
+            </div>
+            
+            <div className="w-full md:w-1/4">
+              <label className="block text-sm font-medium text-teal mb-1">
+                Time Period: {timeRangeStart} - {timeRangeEnd}
+              </label>
+              <div className="flex space-x-4 items-center">
+                <input
+                  type="number"
+                  min="1830"
+                  max={timeRangeEnd}
+                  value={timeRangeStart}
+                  onChange={(e) => {
+                    const value = Math.max(1830, Math.min(timeRangeEnd, Number(e.target.value)));
+                    setTimeRangeStart(value);
+                  }}
+                  className="w-24 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal focus:border-teal"
+                />
+                <span>to</span>
+                <input
+                  type="number"
+                  min={timeRangeStart}
+                  max="1930"
+                  value={timeRangeEnd}
+                  onChange={(e) => {
+                    const value = Math.max(timeRangeStart, Math.min(1930, Number(e.target.value)));
+                    setTimeRangeEnd(value);
+                  }}
+                  className="w-24 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal focus:border-teal"
+                />
+              </div>
             </div>
           </div>
           
-          <div className="w-full md:w-auto mt-8 md:mt-6 flex space-x-3">
+          <div className="w-full md:w-auto mt-8 md:mt-6 flex space-x-3 justify-self-end">
             <button 
               onClick={handleApplyFilters}
               className="px-4 py-2 bg-teal text-white rounded-md hover:bg-teal/80 transition-colors focus:outline-none focus:ring-2 focus:ring-teal"

@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState, useEffect } from "react";
+import { type GeoJsonObject, type FeatureCollection } from "geojson";
 import { MapContainer, TileLayer, GeoJSON, ZoomControl } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -10,7 +11,7 @@ interface StoryMapDashboardProps {
 
 export default function StoryMapDashboard({ storyId }: StoryMapDashboardProps) {
   // Sample GeoJSON data - in a real app, this would be specific to each story map
-  const storyMapGeoJSON = {
+  const storyMapGeoJSON: Record<string, FeatureCollection> = {
     "dawes-act": {
       type: "FeatureCollection",
       features: [
@@ -90,7 +91,7 @@ export default function StoryMapDashboard({ storyId }: StoryMapDashboardProps) {
   };
 
   // Get the correct GeoJSON data for this story
-  const mapData = storyMapGeoJSON[storyId as keyof typeof storyMapGeoJSON] || {
+  const mapData: GeoJsonObject = storyMapGeoJSON[storyId as keyof typeof storyMapGeoJSON] || {
     type: "FeatureCollection",
     features: []
   };
@@ -110,7 +111,7 @@ export default function StoryMapDashboard({ storyId }: StoryMapDashboardProps) {
   };
   
   // Determine map center based on story ID
-  const getMapCenter = () => {
+  const getMapCenter = (): [number, number] => {
     if (storyId === "dawes-act") return [35.5, -97.0]; // Center on Oklahoma
     if (storyId === "oklahoma-allotments") return [35.0, -97.0]; // Center on Oklahoma
     return [39.8283, -98.5795]; // Default US center

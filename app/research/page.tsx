@@ -72,13 +72,12 @@ export default function ResearchPage() {
           <div className="h-1 w-20 bg-accent mx-auto mb-12 rounded-full"></div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="shadow-md overflow-hidden">
-              <div className="h-48 bg-muted relative">
-                <Image
-                  src="/placeholder.svg?height=400&width=600"
+            <Card className="bg-muted shadow-md overflow-hidden">
+              <div className="h-auto w-full bg-muted relative">
+                <img
+                  src="https://placehold.co/400x200?text=Dawes+Rolls+Collection"
                   alt="Dawes Rolls Collection"
-                  fill
-                  className="object-cover"
+                  className="object-cover w-full"
                 />
                 <div className="absolute top-0 right-0 m-3 px-3 py-1 rounded bg-accent text-cream text-sm font-semibold">
                   1887-1914
@@ -106,13 +105,12 @@ export default function ResearchPage() {
               </CardContent>
             </Card>
 
-            <Card className="shadow-md overflow-hidden">
-              <div className="h-48 bg-muted relative">
-                <Image
-                  src="/placeholder.svg?height=400&width=600"
+            <Card className="bg-muted shadow-md overflow-hidden">
+              <div className="h-auto w-full bg-muted relative">
+                <img
+                  src="https://placehold.co/400x200?text=Tribal+Territory+Maps"
                   alt="Tribal Territory Maps"
-                  fill
-                  className="object-cover"
+                  className="object-cover w-full"
                 />
                 <div className="absolute top-0 right-0 m-3 px-3 py-1 rounded bg-accent text-cream text-sm font-semibold">
                   1830-1920
@@ -152,7 +150,7 @@ export default function ResearchPage() {
           <div className="h-1 w-20 bg-accent mx-auto mb-12 rounded-full"></div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="shadow-md">
+            <Card className="shadow-md bg-white">
               <CardContent className="p-6">
                 <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
                   <Search className="w-6 h-6 text-secondary" />
@@ -173,7 +171,7 @@ export default function ResearchPage() {
               </CardContent>
             </Card>
 
-            <Card className="shadow-md">
+            <Card className="shadow-md bg-white">
               <CardContent className="p-6">
                 <div className="w-12 h-12 rounded-full bg-copper/20 flex items-center justify-center mb-4">
                   <Map className="w-6 h-6 text-copper" />

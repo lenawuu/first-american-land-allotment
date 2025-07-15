@@ -50,8 +50,8 @@ export default function AboutPage() {
                 Meet the Project Director
               </h2>
               <div className="h-1 w-20 bg-accent mb-8 rounded-full"></div>
-              <div className="flex flex-col md:flex-row items-start gap-8">
-                <div className="w-full md:w-1/3 relative h-64 mb-6 md:mb-0 overflow-hidden rounded-lg shadow-lg">
+              <div className="flex flex-col sm:flex-row items-start gap-8">
+                <div className="w-full sm:w-1/3 aspect-[176/205] relative mb-6 sm:mb-0 overflow-hidden rounded-lg shadow-lg">
                   <Image
                     src="/tutorials/drtitta.png"
                     alt="Professor Emily Ritter"
@@ -59,7 +59,7 @@ export default function AboutPage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="w-full md:w-2/3">
+                <div className="w-full sm:w-2/3">
                   <h3 className="text-2xl font-bold text-earth mb-2">
                     Professor Emily Ritter
                   </h3>
