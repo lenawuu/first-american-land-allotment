@@ -6,7 +6,7 @@ import "leaflet/dist/leaflet.css";
 
 export default function MapDashboard() {
   // Mock GeoJSON data
-  const geoJSONdata = {
+  const geoJSONdata: GeoJSON.FeatureCollection = {
     type: "FeatureCollection",
     features: [
       {
@@ -85,7 +85,7 @@ export default function MapDashboard() {
   const [timeRangeEnd, setTimeRangeEnd] = useState(1930);
   
   // Displayed data state (separate from filter selections)
-  const [filteredData, setFilteredData] = useState({
+  const [filteredData, setFilteredData] = useState<GeoJSON.FeatureCollection>({
     type: "FeatureCollection",
     features: geoJSONdata.features
   });
@@ -104,7 +104,7 @@ export default function MapDashboard() {
     console.log(`Applying filters: Tribe=${selectedTribe}, LandType=${selectedLandType}, Years=${timeRangeStart}-${timeRangeEnd}`);
     
     // Reset any current data
-    const filtered = {
+    const filtered: GeoJSON.FeatureCollection = {
       type: "FeatureCollection",
       features: geoJSONdata.features.filter(feature => {
         const properties = feature.properties;

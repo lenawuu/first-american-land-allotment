@@ -3,10 +3,8 @@
 import type React from "react";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import NavBar from "@/components/nav-bar";
-import Footer from "@/components/footer";
 import {
   Mail,
   Phone,

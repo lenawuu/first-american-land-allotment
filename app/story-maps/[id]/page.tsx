@@ -56,8 +56,13 @@ const storyMaps = {
   // Additional story maps would be defined here
 }
 
-export default async function StoryMapPage({ params }: { params: { id: string } }) {
-  const storyMap = storyMaps[params.id as keyof typeof storyMaps]
+export type paramsType = Promise<{ id: string }>;
+
+export default async function StoryMapPage({ params }: { params: paramsType }) {
+
+  const { id } = await params;
+
+  const storyMap = storyMaps[id as keyof typeof storyMaps]
   
   // Handle case where story map doesn't exist
   if (!storyMap) {
@@ -116,7 +121,7 @@ export default async function StoryMapPage({ params }: { params: { id: string } 
               <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: storyMap.content }}></div>
               
               {/* Use the client component wrapper */}
-              <StoryMapWrapper storyId={params.id} />
+              <StoryMapWrapper storyId={id} />
             </div>
             
             {/* Sidebar */}

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { MapIcon, SearchIcon, LayersIcon, InfoIcon, BookOpenIcon, UserIcon } from "lucide-react"
+import Image from "next/image"
 
 export default function TutorialsPage() {
   // Colors from screenshot
@@ -243,7 +244,7 @@ export default function TutorialsPage() {
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <Card style={{ borderColor: colors.teal }}>
             <div className="aspect-video bg-gray-200 flex items-center justify-center">
-            <img src="/tutorials/beginner.png" alt="Beginner's Guide Video Thumbnail" className="w-full h-auto" />
+            <Image src="/tutorials/beginner.png" alt="Beginner's Guide Video Thumbnail" className="w-full h-auto" />
 
 
 
@@ -256,7 +257,7 @@ export default function TutorialsPage() {
           
           <Card style={{ borderColor: colors.teal }}>
             <div className="aspect-video bg-gray-200 flex items-center justify-center">
-            <img src="/tutorials/ancestory.png" alt="Beginner's Guide Video Thumbnail" className="w-full h-auto" />
+            <Image src="/tutorials/ancestory.png" alt="Beginner's Guide Video Thumbnail" className="w-full h-auto" />
             </div>
             <CardContent className="p-4">
               <h3 className="font-semibold" style={{ color: colors.navy }}>Finding Family Connections (12:43)</h3>
@@ -266,7 +267,7 @@ export default function TutorialsPage() {
           
           <Card style={{ borderColor: colors.teal }}>
             <div className="aspect-video bg-gray-200 flex items-center justify-center">
-            <img src="/tutorials/documents.png" alt="Beginner's Guide Video Thumbnail" className="w-full h-auto" />
+            <Image src="/tutorials/documents.png" alt="Beginner's Guide Video Thumbnail" className="w-full h-auto" />
             </div>
             <CardContent className="p-4">
               <h3 className="font-semibold" style={{ color: colors.navy }}>Understanding Documents (9:21)</h3>
